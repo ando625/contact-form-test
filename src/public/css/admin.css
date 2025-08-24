@@ -1,0 +1,572 @@
+/* ヘッダー下の区切り線 */
+.header-divider {
+    height: 1px;
+    background-color: #ddd;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* 管理画面全体のスタイル */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.admin-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    color: #8b7355;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+/* 検索フォームのスタイル */
+.search-form {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 30px auto;
+    padding: 0;
+}
+
+.search-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 2;
+    min-width: 250px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #E3DED9;
+    border-radius: 1px;
+    font-size: 14px;
+    color: #8B7969;
+    background-color: #F4F4F4;
+}
+
+.name-input {
+    max-width: none;
+}
+
+.search-select {
+    flex: 1;
+    height: 42px;
+    padding: 0 30px 0 12px;
+    border: 1px solid #E3DED9;
+    border-radius: 1px;
+    font-size: 14px;
+    color: #8B7969;
+    font-weight: 400;
+    background-color: #F4F4F4;
+    /* 下向き三角形のアイコン */
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* 性別セレクトボックスのサイズ調整 */
+.search-select[name="gender"] {
+    max-width: 100px;
+    min-width: 100px;
+    flex: 0 0 auto;
+}
+
+/* お問い合わせの種類セレクトボックスのサイズ調整 */
+.search-select[name="inquiry_type"] {
+    max-width: 200px;
+    min-width: 200px;
+    flex: 0 0 auto;
+}
+
+.search-date {
+    width: 100%;
+    height: 42px;
+    padding: 0 30px 0 12px;
+    border: 1px solid #E3DED9;
+    border-radius: 1px;
+    font-size: 14px;
+    color: #8B7969;
+    background-color: #F4F4F4;
+    cursor: pointer;
+    /* カレンダー用の三角形のアイコンを追加 */
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: center;
+}
+
+/* 日付入力フィールドのサイズ調整 */
+.date-input-container {
+    flex: 0 0 auto;
+    position: relative;
+    width: 150px;
+}
+
+/* WebKitブラウザ（Chrome、Safari）でdate入力のデフォルトアイコンを非表示にして、三角形エリアでクリック可能にする */
+.search-date::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* ボタングループを右端に配置 */
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.search-btn {
+    height: 42px;
+    padding: 0 25px;
+    background-color: #8B7969;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.reset-btn {
+    height: 42px;
+    padding: 0 25px;
+    background-color: #D9C6B5;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+/* エクスポートボタンとページネーションのレイアウト */
+.export-pagination-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    padding: 0;
+}
+
+.export-section {
+    flex-shrink: 0;
+}
+
+.export-btn {
+    height: 40px;
+    padding: 0 20px;
+    background-color: #E1DBD699;
+    color: #8B7969;
+    font-weight: 400;
+    border: none;
+    border-radius: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ページネーションのスタイル */
+.pagination-section {
+    flex-shrink: 0;
+}
+
+.pagination-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid #E0DFDE;
+    border-radius: 1px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.pagination-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    color: #8B7969;
+    border: none;
+    border-right: 1px solid #E0DFDE;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.pagination-arrow:hover {
+    background-color: #f5f5f5;
+}
+
+.pagination-arrow:last-child {
+    border-right: none;
+    border-left: 1px solid #E0DFDE;
+}
+
+.pagination-arrow.disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    color: #ccc;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    background-color: transparent;
+}
+
+.pagination-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 35px;
+    padding: 0 6px;
+    text-decoration: none;
+    color: #8B7969;
+    font-size: 14px;
+    transition: all 0.2s;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    border-right: 1px solid #E0DFDE;
+    border-radius: 0;
+}
+
+.pagination-number:last-child {
+    border-right: 1px solid #E0DFDE;
+}
+
+.pagination-number:hover {
+    background-color: #f5f5f5;
+}
+
+.pagination-number.active {
+    background-color: #8B7969;
+    color: white;
+    font-weight: bold;
+}
+
+/* テーブルのスタイル */
+.table-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #8B7969;
+}
+
+.table-header {
+    background-color: #8B7969;
+    color: white;
+    height: 50px;
+}
+
+.table-header th {
+    text-align: left;
+    padding: 0 20px;
+    font-weight: normal;
+    border: none;
+}
+
+.table-row {
+    height: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.table-row:hover {
+    background-color: #f9f9f9;
+}
+
+.table-row td {
+    padding: 0 20px;
+    vertical-align: middle;
+}
+
+.name-cell {
+    font-weight: 500;
+}
+
+.detail-btn {
+    background-color: #F4F4F44D;
+    color: #D9C6B5;
+    border: 1px solid #D9C6B599;
+    padding: 8px 16px;
+    border-radius: 1px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* モーダルのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 画面の中央に配置 */
+    padding: 0;
+    border-radius: 1px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #8B7969;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 1001;
+    border: 1px solid #8B7969;
+    background-color: white;
+    transition: all 0.2s;
+}
+
+#detailContent {
+    padding: 30px;
+    padding-top: 80px;
+    /* 上部のpaddingをさらに増加（50px→80px） */
+    padding-bottom: 10px;
+    /* 下部のpaddingを少なくして削除ボタンとの間隔を調整 */
+    overflow-y: auto;
+    flex: 1;
+}
+
+.detail-info {
+    margin-top: 10px;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.detail-row label {
+    width: 180px;
+    font-weight: bold;
+    color: #8B7969;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.detail-row span {
+    flex: 1;
+    color: #8B7969;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.detail-content {
+    white-space: pre-wrap;
+}
+
+.modal-actions {
+    padding: 30px 30px;
+    /* 上下のpaddingを20pxから30pxに増加 */
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-top: 20px;
+    /* 削除ボタンの上に余白を追加 */
+}
+
+.delete-btn {
+    background-color: #BA370D;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .search-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input,
+    .search-select,
+    .search-date {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .button-group {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .button-group .search-btn,
+    .button-group .reset-btn {
+        flex: 1;
+    }
+
+    .export-pagination-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .admin-table {
+        font-size: 12px;
+    }
+
+    .table-header th,
+    .table-row td {
+        padding: 0 10px;
+    }
+
+    .modal-content {
+        width: 95%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* モバイルでも中央配置 */
+    }
+
+    #detailContent {
+        padding: 20px;
+        padding-top: 60px;
+        /* モバイル版でも上部余白を増加（40px→60px） */
+        padding-bottom: 10px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .detail-row label {
+        width: auto;
+        margin-bottom: 5px;
+    }
+
+    .modal-actions {
+        padding: 25px 20px;
+        /* モバイル版でも余白調整 */
+        margin-top: 15px;
+    }
+
+    .pagination-wrapper {
+        gap: 0;
+        border: 1px solid #E0DFDE;
+        border-radius: 4px;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    .pagination-arrow {
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        color: #8B7969;
+        border: none;
+        border-right: 1px solid #E0DFDE;
+        border-radius: 0;
+    }
+
+    .pagination-arrow:hover {
+        background-color: #f5f5f5;
+    }
+
+    .pagination-arrow:last-child {
+        border-right: none;
+        border-left: 1px solid #E0DFDE;
+    }
+
+    .pagination-arrow.disabled {
+        background-color: #f5f5f5;
+        cursor: not-allowed;
+        color: #ccc;
+    }
+
+    .pagination-number {
+        min-width: 35px;
+        height: 35px;
+        border: none;
+        border-right: 1px solid #E0DFDE;
+        border-radius: 0;
+        color: #8B7969;
+    }
+
+    .pagination-number:last-child {
+        border-right: 1px solid #E0DFDE;
+    }
+
+    .pagination-number.active {
+        background-color: #8B7969;
+        color: white;
+    }
+}

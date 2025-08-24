@@ -1,0 +1,210 @@
+/* ログイン画面全体のスタイル */
+.main {
+    background-color: #D9C6B5;
+    padding: 0;
+    min-height: calc(100vh - 90px);
+}
+
+.login-container {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* ログインタイトル（カードの外） */
+.login-title {
+    font-size: 24px;
+    font-weight: 300;
+    color: #8B7969;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* ログインカードのスタイル */
+.login-card {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 60px 80px;
+    width: 100%;
+    max-width: 700px;
+    min-height: 480px;
+    border: 1px solid #C5B9B0;
+    display: flex;
+    /* フレックスボックスを追加 */
+    align-items: center;
+    /* 垂直方向中央配置 */
+    justify-content: center;
+    /* 水平方向中央配置 */
+}
+
+/* ログインフォーム */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+    /* フォームの幅を制限 */
+    max-width: 400px;
+    /* 最大幅を設定 */
+}
+
+/* フォームグループ */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* フォームラベル */
+.form-label {
+    font-size: 16px;
+    color: #8B7969;
+    margin-bottom: 12px;
+    font-weight: normal;
+    text-align: left;
+}
+
+/* フォーム入力フィールド */
+.form-input {
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    font-size: 16px;
+    background-color: #F4F4F4;
+    transition: border-color 0.3s ease;
+    outline: none;
+    width: 100%;
+    box-shadow: none;
+}
+
+.form-input:focus {
+    border-color: #8b7355;
+    box-shadow: none;
+    background-color: #ffffff;
+}
+
+.form-input::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+/* エラー状態の入力フィールド */
+.form-input.error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.1);
+}
+
+/* エラーメッセージ */
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* ログインボタン */
+.login-button {
+    height: 45px;
+    background-color: #82756A;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 160px;
+    align-self: center;
+}
+
+.login-button:hover {
+    background-color: #7a6349;
+}
+
+.login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.3);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .login-container {
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .login-card {
+        padding: 40px 50px;
+        max-width: 500px;
+        min-height: 450px;
+    }
+
+    .login-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .form-input {
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .login-button {
+        height: 40px;
+        font-size: 15px;
+        width: 140px;
+    }
+
+    .form-label {
+        font-size: 15px;
+    }
+
+    .login-form {
+        gap: 30px;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .login-card {
+        padding: 30px 40px;
+        max-width: 350px;
+        min-height: 400px;
+    }
+
+    .login-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-input {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .login-button {
+        height: 38px;
+        font-size: 14px;
+        width: 120px;
+    }
+
+    .login-form {
+        gap: 25px;
+        max-width: 300px;
+    }
+}

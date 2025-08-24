@@ -1,0 +1,296 @@
+/* お問い合わせフォームのCSS */
+
+/* 背景を白に統一 */
+body {
+    background-color: white !important;
+}
+
+/* ヘッダーに下線を追加 */
+.header {
+    border-bottom: 1px solid #ddd;
+}
+
+/* メインコンテンツ */
+.main {
+    padding: 50px 40px 80px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    color: #8B7969;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* フォーム */
+.contact-form {
+    width: 100%;
+}
+
+/* form-group を縦並びに対応 */
+.form-group {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* 入力欄とエラーを縦に並べる */
+.input-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* バリデーションエラー表示 */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* ラベル */
+.form-group label {
+    width: 200px;
+    padding-right: 20px;
+    font-weight: 400;
+    color: #8B7969;
+    font-size: 16px;
+    flex-shrink: 0;
+    padding-top: 12px;
+    white-space: nowrap;
+}
+
+/* 入力欄 */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    color: #8b7355;
+    font-size: 16px;
+    border-radius: 0;
+    font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b7355;
+    background-color: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23BEB1A6" d="m0 0 2 2 2-2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+/* 必須マーク */
+.required {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* 名前の横並び */
+.form-row {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.form-row .form-group:first-child {
+    margin-right: 20px;
+}
+
+.form-row .form-group:first-child label {
+    width: 200px;
+}
+
+.form-row .form-group:nth-child(2) label {
+    width: 0;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
+/* ラジオボタン */
+.radio-group {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    padding-left: 0;
+    width: auto !important;
+    padding-top: 0 !important;
+}
+
+.radio-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    margin-right: 8px;
+    position: relative;
+    background-color: white;
+}
+
+.radio-label input[type="radio"]:checked+.radio-custom {
+    border-color: #8b7355;
+    background-color: #8b7355;
+}
+
+.radio-label input[type="radio"]:checked+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #8b7355;
+}
+
+/* 電話番号 */
+.phone-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.phone-group input {
+    width: 100px;
+    text-align: center;
+}
+
+.phone-separator {
+    color: #666;
+    font-size: 16px;
+}
+
+/* 送信ボタン */
+.form-submit {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.submit-button {
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #82756A;
+}
+
+.submit-button:focus {
+    outline: 2px solid #8b7355;
+    outline-offset: 2px;
+}
+
+/* プレースホルダー */
+::placeholder {
+    color: #8b7355;
+    opacity: 0.7;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .main {
+        padding: 40px 20px 60px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .contact-title {
+        font-size: 22px;
+        margin-bottom: 40px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-group label {
+        width: auto;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row .form-group:first-child {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .radio-group {
+        padding-top: 0;
+        gap: 20px;
+    }
+
+    .phone-group input {
+        width: 80px;
+    }
+}
+
+/* オートフィルの背景色を修正 */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: #8b7355 !important;
+}

@@ -1,0 +1,135 @@
+.confirm-container {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.confirm-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #8B7969;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.confirm-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.confirm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+}
+
+.confirm-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.confirm-table tr:last-child {
+    border-bottom: none;
+}
+
+.confirm-label {
+    width: 200px;
+    padding: 20px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 500;
+    vertical-align: top;
+    background-color: #b8a690;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+}
+
+.confirm-value {
+    padding: 20px 15px;
+    font-size: 14px;
+    color: #333;
+    background-color: #ffffff;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+.content-text {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.confirm-buttons {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.back-btn {
+    background: none;
+    color: #82756A;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+
+}
+
+
+
+.submit-btn {
+    background-color: #82756A;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 1px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #7a6349;
+}
+
+@media (max-width: 768px) {
+    .confirm-container {
+        padding: 30px 20px;
+    }
+
+    .confirm-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .confirm-label {
+        width: 120px;
+        font-size: 13px;
+        padding: 15px 10px;
+    }
+
+    .confirm-value {
+        font-size: 13px;
+        padding: 15px 10px;
+    }
+
+    .confirm-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .back-btn,
+    .submit-btn {
+        width: 120px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
