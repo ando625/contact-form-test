@@ -29,7 +29,7 @@ docker-compose exec app php artisan db:seed
 - Fortify（認証用）
 
 ## ER図
-![ER図](./images/ER図.png)
+![ER図](src/images/ED図.png)
 
 ## ルーティング
 | ページ | URL |
