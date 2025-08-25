@@ -27,10 +27,10 @@ Route::post('/contacts', [ContactController::class, 'store'])->name('contact.sto
 
 
 
-
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-Route::post('/admin/export', [AdminController::class, 'export'])->name('admin.export');
-Route::post('/logout', [AdminController::class, 'destroy'])->name('logout');
-Route::delete('/admin/contact/{contact}', [AdminController::class, 'destroyContact'])
-    ->name('admin.contact.destroy');
-
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::post('/admin/export', [AdminController::class, 'export'])->name('admin.export');
+    Route::delete('/admin/contact/{contact}', [AdminController::class, 'destroyContact'])
+        ->name('admin.contact.destroy');
+    Route::post('/logout', [AdminController::class, 'destroy'])->name('logout');
+});

@@ -9,7 +9,7 @@
     <h1 class="login-title">Login</h1>
     
     <div class="login-card">
-        <form method="get" action="/admin" class="login-form">
+        <form method="post" action="/login" class="login-form">
             @csrf
             
             <!--テスト ログイン password123  test@example.com -->
