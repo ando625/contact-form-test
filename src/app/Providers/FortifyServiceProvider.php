@@ -19,7 +19,7 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         // LoginResponse をカスタムクラスに差し替え
-        $this->app->singleton(LoginResponse::class, CustomLoginResponse::class);
+        
     }
 
     /**
@@ -38,5 +38,6 @@ class FortifyServiceProvider extends ServiceProvider
             $email = (string) $request->email;
             return Limit::perMinute(10)->by($email.$request->ip());
         });
+        $this->app->bind(FortifyLoginRequest::class, LoginRequest::class);
     }
 }
