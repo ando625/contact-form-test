@@ -38,6 +38,12 @@ class FortifyServiceProvider extends ServiceProvider
             $email = (string) $request->email;
             return Limit::perMinute(10)->by($email.$request->ip());
         });
+
+        // 2段階認証の試行制限（config/fortify.php の limiters で指定している名前。
+        // Laravel 11 からは、定義されていない名前を指定するとエラーになる）
+        RateLimiter::for('two-factor', function (Request $request) {
+            return Limit::perMinute(5)->by($request->session()->get('login.id'));
+        });
         $this->app->bind(FortifyLoginRequest::class, LoginRequest::class);
     }
 }
