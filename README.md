@@ -22,8 +22,8 @@ docker-compose exec app php artisan db:seed
 
 
 ## 使用技術(実行環境)
-- Laravel 10.x
-- PHP 8.2
+- Laravel 13
+- PHP 8.4
 - MySQL 8.0
 - Docker / Docker Compose
 - Fortify（認証用）
@@ -109,3 +109,34 @@ docker-compose exec app php artisan db:seed
 ## URL
 - 開発環境：http://localhost/
 - phpMyAdmin: http://localhost:8080/
+
+## バージョンアップと脆弱性チェック
+
+### バージョンアップ（2026年11月）
+
+PHP 8.1 + Laravel 8 から、PHP 8.4 + Laravel 13 に更新しました。
+Laravel は公式のアップグレードガイドに沿って 8 → 9 → 10 → 11 → 12 → 13 と1段ずつ上げています。
+
+| 対象 | 変更前 | 変更後 | セキュリティ修正の期限 |
+|---|---|---|---|
+| PHP | 8.1 | 8.4 | 2028-12-31 |
+| Laravel | 8 | 13 | 2028-03-17 |
+
+- 期限の出典: [PHP Supported Versions](https://www.php.net/supported-versions.php) / [Laravel Release Notes](https://laravel.com/docs/13.x/releases)
+- `composer audit` で検出された脆弱性は、更新前の59件から0件になりました
+- 2026年5月のサプライチェーン攻撃でマルウェア登録された `laravel-lang/lang` は、使っていなかったため依存から削除しました
+
+### 脆弱性チェックの方法
+
+PHP コンテナの中で次のコマンドを実行すると、依存パッケージに既知の脆弱性やマルウェアがないか確認できます（マルウェアの確認には新しい Composer が必要です。2.8 では確認されず、2.11 では確認されることを確かめています）。
+
+```bash
+composer audit
+```
+
+### 自動チェック
+
+| 仕組み | 内容 |
+|---|---|
+| GitHub Actions（`.github/workflows/composer-audit.yml`） | `main` への push・PR・毎週月曜に `composer audit` を実行し、問題があれば失敗にする |
+| Dependabot（`.github/dependabot.yml`） | composer と Dockerfile の更新を毎週チェックし、更新があれば PR を作る |
