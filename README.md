@@ -23,7 +23,7 @@ docker-compose exec app php artisan db:seed
 
 ## 使用技術(実行環境)
 - Laravel 13
-- PHP 8.4
+- PHP 8.5
 - MySQL 8.0
 - Docker / Docker Compose
 - Fortify（認証用）
@@ -125,6 +125,17 @@ Laravel は公式のアップグレードガイドに沿って 8 → 9 → 10 �
 - 期限の出典: [PHP Supported Versions](https://www.php.net/supported-versions.php) / [Laravel Release Notes](https://laravel.com/docs/13.x/releases)
 - `composer audit` で検出された脆弱性は、更新前の59件から0件になりました
 - 2026年5月のサプライチェーン攻撃でマルウェア登録された `laravel-lang/lang` は、使っていなかったため依存から削除しました
+
+### PHP 8.5 への更新（2026年11月）
+
+PHP 8.4 のバグ修正が 2026-12-31 で終わるため、PHP 8.5 に更新しました（Docker・composer.json・CI）。
+
+| 対象 | 変更前 | 変更後 | バグ修正の期限 | セキュリティ修正の期限 |
+|---|---|---|---|---|
+| PHP | 8.4 | 8.5 | 2027-12-31 | 2029-12-31 |
+
+- 期限の出典: [PHP Supported Versions](https://www.php.net/supported-versions.php)
+- Laravel 13 は PHP 8.3〜8.5 に対応しています（[Laravel Release Notes](https://laravel.com/docs/13.x/releases)）
 
 ### 脆弱性チェックの方法
 
